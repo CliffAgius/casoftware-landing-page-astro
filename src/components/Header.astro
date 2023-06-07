@@ -60,18 +60,19 @@ import logo from '../images/casoftware-fit.svg';
   }
 </style>
 
-<script>
-  const privacy = document.querySelector('.privacy');
-  if (window.location.pathname === '/privacy') {
-    privacy.innerHTML = `<a
+<script type="module">
+  Astro.onRender(() => {
+    const privacy = document.querySelector('.privacy');
+    if (window.location.pathname === '/privacy') {
+      privacy.innerHTML = `<a
         href="/"
         class="privacy flex tracking-widest hover:text-white transition duration-500"
         >HOME</a>`;
-  } else {
-    privacy.innerHTML = `<a
+    } else {
+      privacy.innerHTML = `<a
         href="/privacy"
         class="privacy flex tracking-widest hover:text-white transition duration-500"
-        >privacy policy</a
-      >`;
-  }
+        >privacy policy</a>`;
+    }
+  });
 </script>
