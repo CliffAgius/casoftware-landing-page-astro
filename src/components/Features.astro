@@ -1,23 +1,105 @@
 ---
-import Card from './Card.astro';
+import perceptDesktop from '../images/previous-projects/perceptpartpicker-desktop.jpg';
+import perceptMob from '../images/previous-projects/perceptpartpicker-mobile.jpg';
+import brunelDesktop from '../images/previous-projects/brunelhandparts-desktop.jpg';
+import brunelMob from '../images/previous-projects/brunelhandparts-mobile.jpg';
+import cftDesktop from '../images/previous-projects/cft2022-desktop.jpg';
+import cftMobile from '../images/previous-projects/cft2022-mobile.jpg';
 
-const featuresData = [
-  {
-    title: 'Zero JavaScript Runtime',
-    body: ' Astro renders HTML on the server and strips away any remaining, unused JavaScript.',
-  },
-  {
-    title: 'The Power of Islands',
-    body: ' Need interactive UI? Load individual, non-blocking component islands in parallel.',
-  },
-  {
-    title: 'Lazy-Loading Islands',
-    body: "Components only hydrate when they scroll into view. If you don't see it, Astro won't load it.",
-  },
-];
+// const featuresData = [
+//   {
+//     title: 'Zero JavaScript Runtime',
+//     body: ' Astro renders HTML on the server and strips away any remaining, unused JavaScript.',
+//   },
+//   {
+//     title: 'The Power of Islands',
+//     body: ' Need interactive UI? Load individual, non-blocking component islands in parallel.',
+//   },
+//   {
+//     title: 'Lazy-Loading Islands',
+//     body: "Components only hydrate when they scroll into view. If you don't see it, Astro won't load it.",
+//   },
+// ];
 ---
 
-<section class="features">
+<!-- Creations Section -->
+<section id="prev-projects" class="pb-24 md:py-24 features lg:h-screen">
+  <!-- Creations Container -->
+  <div
+    class="container max-w-6xl mx-auto mt-32 px-6 text-gray-900 md:px-0 relative"
+  >
+    <!-- Creations Header -->
+    <div class="flex justify-center mb-8 md:justify-between p-6">
+      <h2
+        class="text-white text-2xl text-center uppercase md:text-left md:text-3xl"
+      >
+        previous Projects
+      </h2>
+    </div>
+
+    <!-- Items Container -->
+    <div class="item-container p-6">
+      <!-- Item 1 -->
+      <div class="group item rounded-lg cursor-pointer" onclick="">
+        <!-- Desktop Image -->
+
+        <img
+          src={perceptDesktop}
+          alt=""
+          class="hidden w-full duration-200 md:block group-hover:scale-110"
+        />
+
+        <!-- Mobile Image -->
+        <img src={perceptMob} alt="" class="w-full md:hidden" />
+        <!-- Item Gradient -->
+        <div class="item-gradient"></div>
+        <!-- Item Text -->
+        <h5>Percept Part Picker</h5>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="group item rounded-lg cursor-pointer">
+        <!-- Desktop Image -->
+        <img
+          src={brunelDesktop}
+          alt=""
+          class="hidden w-full duration-200 md:block group-hover:scale-110"
+        />
+        <!-- Mobile Image -->
+        <img src={brunelMob} alt="" class="w-full md:hidden" />
+        <!-- Item Gradient -->
+        <div class="item-gradient"></div>
+        <!-- Item Text -->
+        <h5>3D Printed Prosthetic</h5>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="group item rounded-lg cursor-pointer">
+        <!-- Desktop Image -->
+        <img
+          src={cftDesktop}
+          alt=""
+          class="hidden w-full duration-200 md:block group-hover:scale-110"
+        />
+        <!-- Mobile Image -->
+        <img src={cftMobile} alt="" class="w-full md:hidden" />
+        <!-- Item Gradient -->
+        <div class="item-gradient"></div>
+        <!-- Item Text -->
+        <h5>Customer First Team BA</h5>
+      </div>
+    </div>
+    <!-- MVP Box -->
+    <!-- <div class="relative flex w-full items-center justify-center p-6">
+      <img
+        src="/Images/MVP_Logo_Horizontal_Preferred_Cyan300_CMYK_72ppi.png"
+        alt=""
+        class="rounded-lg opacity-70"
+      />
+    </div> -->
+  </div>
+
+  <!-- <section class="features showcase">
   <div class="container">
     {
       featuresData.map((feature) => (
@@ -28,20 +110,32 @@ const featuresData = [
       ))
     }
   </div>
-</section>
-
-<style>
-  /* Cards */
-  .features .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    padding: 0 20px;
-    margin: 30px auto;
-  }
-  @media (max-width: 500px) {
-    .features .container {
-      grid-template-columns: 1fr;
+</section> -->
+  <style>
+    .features {
+      background-color: rgba(3, 0, 41, 0.94);
     }
-  }
-</style>
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get our element
+      const element = document.querySelector('.features .container');
+
+      // Define our scroll check function
+      function checkScroll() {
+        const rect = element.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight) {
+          element.classList.add('animate__animated', 'animate__fadeIn');
+        }
+      }
+
+      // Listen for scroll events
+      window.addEventListener('scroll', checkScroll);
+
+      // Run our scroll check function once to check initial position
+      checkScroll();
+    });
+  </script>
+</section>

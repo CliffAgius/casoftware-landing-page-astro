@@ -6,7 +6,7 @@ export interface Props {
 const { dark = false } = Astro.props as Props;
 ---
 
-<div class={`card ${dark && 'dark'}`}>
+<div class={`card ${dark && 'dark'}`} data-aos="fade-up">
   <slot />
 </div>
 

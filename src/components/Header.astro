@@ -1,23 +1,46 @@
 ---
-import logo from '../images/logo.svg';
+import logo from '../images/casoftware-fit.svg';
 ---
 
-<header class="header">
-  <div class="container">
-    <div class="logo">
-      <a href="index.html">
-        <img src={logo} alt="" />
-      </a>
+<header class="header relative md:p-6 z-40 text-center">
+  <!-- Flex container for nav items -->
+  <div class="md:flex justify-between md:mx-auto items-center max-w-[2000px]">
+    <!-- Logo -->
+    <div class="w-44 h-min mx-auto md:mx-0 pb-8 md:pb-0 mt-10 md:mt-0">
+      <a href="/"><img class="cursor-pointer" src={logo} alt="" /></a>
     </div>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
+    <!-- <div>
+        <img src="/Images/CALtd_logoV2.svg" alt="" class="w-64" />
+      </div> -->
+
+    <!-- Menu Items -->
+    <div
+      class="flex items-center justify-center space-x-4 md:space-x-10 uppercase text-grayishBlue"
+    >
+      <a
+        href="/privacy"
+        class="privacy flex tracking-widest hover:text-white transition duration-500"
+        >privacy policy</a
+      >
+    </div>
   </div>
 </header>
+<!-- <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src={logo} alt="" />
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header> -->
 
 <style>
   .header {
@@ -32,21 +55,20 @@ import logo from '../images/logo.svg';
     justify-content: space-between;
     padding: 0 20px;
   }
-
-  .header img {
-    height: 35px;
-    vertical-align: middle;
-  }
-
-  .header nav ul {
-    display: flex;
-  }
-
-  .header nav ul li {
-    padding: 0 10px;
-  }
-
-  .header nav ul li a {
-    color: #fff;
-  }
 </style>
+
+<script>
+  const privacy = document.querySelector('.privacy');
+  if (window.location.pathname === '/privacy') {
+    privacy.innerHTML = `<a
+        href="/"
+        class="privacy flex tracking-widest hover:text-white transition duration-500"
+        >HOME</a>`;
+  } else {
+    privacy.innerHTML = `<a
+        href="/privacy"
+        class="privacy flex tracking-widest hover:text-white transition duration-500"
+        >privacy policy</a
+      >`;
+  }
+</script>

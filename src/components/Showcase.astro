@@ -1,6 +1,9 @@
 ---
-import logos from '../images/framework-logos.png';
-import logosSmall from '../images/framework-logos-small.png';
+import emailIcon from '../images/icon-email.svg';
+import dotNetLogo from '../images/dotnet.png';
+import dotNetMaui from '../images/maui.svg';
+import AWSLogo from '../images/aws.svg';
+import azureLogo from '../images/azure.svg';
 
 export interface Props {
   heading?: string;
@@ -9,13 +12,116 @@ export interface Props {
 }
 
 const {
-  heading = 'Welcome To The Astro Crash Course!',
-  text = 'Build super fast HTML-first websites using your favorite JavaScript frameworks',
+  heading = 'Welcome to CASoftware Ltd.',
+  text = 'We empower businesses through bespoke solutions in .NET, Microsoft Azure, .NET MAUI, IoT and more. Ignite your digital transformation journey with us.',
   showExtra = false,
 } = Astro.props as Props;
 ---
 
-<section class="showcase">
+<div
+  id="bg__wallpaper"
+  class="bg-wallpaper bg-cover bg-no-repeat bg-center relative z-10 min-h-screen"
+>
+  <section id="main__container " class="relative showcase pb-16 md:h-screen">
+    <!-- BG Wallpaper Gradient -->
+    <!-- <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black z-0">
+  </div> -->
+
+    <!-- Content Container -->
+    <div class="container relative mx-auto p-6 pt-20 lg:pt-36">
+      <!-- Content -->
+      <div class="flex flex-col space-y-2 z-30 relative">
+        <h1
+          class="animate__animated animate__fadeIn animate__slow p-4 text-3xl font-semibold text-center text-white max-w-md md:max-w-4xl mx-auto leading-10 lg:pt-16"
+        >
+          {heading}
+        </h1>
+        <p
+          class="animate__animated animate__fadeIn animate__delay-2s showcase-text"
+        >
+          {text}
+        </p>
+      </div>
+
+      <div
+        class="animate__animated animate__fadeIn animate__delay-2s flex items-center justify-center w-full space-x-4 md:justify-center my-16"
+      >
+        <a
+          href="#prev-projects"
+          class="p-4 text-sm font-semibold text-white bg-opacity-0 uppercase rounded shadow-md border-2 border-white md:text-base hover:bg-white hover:text-black transition duration-700"
+          >previous projects</a
+        >
+      </div>
+
+      <div class="flex items-center justify-center w-full space-x-4 p-4">
+        <div class="flex items-center space-x-3 md:mt-4">
+          <div class="animate__animated animate__fadeIn animate__delay-2s w-6">
+            <img src={emailIcon} alt="email icon" class="scale-10" />
+          </div>
+          <div
+            class="animate__animated animate__fadeIn animate__delay-2s text-white"
+          >
+            support@ca-software.co.uk
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container xl:pt-40">
+      <!-- Boxes Container -->
+      <div
+        class="relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 md:gap-10 justify-item-center items-center max-w-4xl md:mx-auto md:space-y-0 md:px-6 pt-6 mt-6 gap-3"
+      >
+        <!-- Box 1 -->
+        <div
+          class="logoBox boxOne flex flex-col pb-3 space-y-4 text-center rounded-lg shadow-lg bg-white overflow-y-hidden transition duration-500 hover:-translate-y-3 overflow-x-hidden"
+        >
+          <div class="h-3 -top-10 w-full bg-purple-500 px-20"></div>
+          <!-- Image -->
+          <div class="flex justify-center">
+            <img src={dotNetLogo} alt="" class="h-28 w-28" />
+          </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div
+          class="logoBox boxTwo flex flex-col pb-3 space-y-4 text-center rounded-lg shadow-lg bg-white overflow-y-hidden transition duration-500 hover:-translate-y-3 overflow-x-hidden"
+        >
+          <div class="h-3 -top-10 w-full bg-blue-500 px-20"></div>
+          <!-- Image -->
+          <div class="flex justify-center self-center h-28 w-28">
+            <img src={azureLogo} alt="" />
+          </div>
+        </div>
+
+        <!-- Box 3 -->
+
+        <div
+          class="logoBox boxThree flex flex-col pb-3 space-y-4 text-center rounded-lg shadow-lg bg-white overflow-y-hiddentransition duration-500 hover:-translate-y-3 overflow-x-hidden"
+        >
+          <div class="h-3 w-full bg-orange-500 px-20"></div>
+          <!-- Image -->
+          <div class="flex justify-center self-center h-28 w-28">
+            <img src={AWSLogo} alt="" />
+          </div>
+        </div>
+
+        <!-- Box 4 -->
+
+        <div
+          class="logoBox boxFour flex flex-col pb-3 space-y-4 text-center rounded-lg shadow-lg bg-white overflow-y-hidden overflow-x-hidden transition duration-500 hover:-translate-y-3"
+        >
+          <div class="h-3 -top-10 w-full bg-violet-400 px-20"></div>
+          <!-- Image -->
+          <div class="flex justify-center self-center h-28 w-28">
+            <img src={dotNetMaui} alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- <section class="showcase">
   <div class="showcase-text">
     <h1>{heading}</h1>
     <p>
@@ -39,16 +145,15 @@ const {
       </>
     )
   }
-</section>
+</section> -->
 
 <style>
   .showcase {
-    height: auto;
-    background-color: var(--color-secondary);
+    background-color: var(--color-secondary), rgba(47, 37, 184, 0.647);
     background-image: linear-gradient(
       to bottom,
       var(--color-primary),
-      rgba(42, 15, 19, 0)
+      rgba(19, 21, 78, 0.698)
     );
     padding: 30px;
   }
@@ -59,7 +164,7 @@ const {
 
   .showcase-text {
     max-width: 500px;
-    color: #fff;
+    color: #ffffffe1;
     text-align: center;
     margin: 50px auto;
   }
@@ -68,6 +173,7 @@ const {
     font-size: 50px;
     color: #fff;
     margin-bottom: 20px;
+    line-height: 3.5rem;
   }
 
   .showcase p {
@@ -90,3 +196,35 @@ const {
     font-weight: 300;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const boxes = document.querySelectorAll(
+      '.logoBox'
+    ) as NodeListOf<HTMLElement>;
+
+    boxes.forEach((box) => {
+      setTimeout(() => {
+        setTimeout(() => {
+          boxes[0].style.visibility = 'visible';
+          boxes[0].classList.add('animate__animated', 'animate__fadeIn');
+        }, 300); // Start after 300ms
+
+        setTimeout(() => {
+          boxes[1].style.visibility = 'visible';
+          boxes[1].classList.add('animate__animated', 'animate__fadeIn');
+        }, 600); // Start after 600ms
+
+        setTimeout(() => {
+          boxes[2].style.visibility = 'visible';
+          boxes[2].classList.add('animate__animated', 'animate__fadeIn');
+        }, 900); // Start after 900ms
+        setTimeout(() => {
+          boxes[3].style.visibility = 'visible';
+          boxes[3].classList.add('animate__animated', 'animate__fadeIn');
+        }, 1200); // Start after 1200ms
+      }, 3500);
+      box.classList.remove('animate__animated', 'animate__fadeIn');
+    });
+  });
+</script>
