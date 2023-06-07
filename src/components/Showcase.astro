@@ -22,17 +22,21 @@ const {
   id="bg__wallpaper"
   class="bg-wallpaper bg-cover bg-no-repeat bg-center relative z-10 min-h-screen"
 >
-  <section id="main__container " class="relative showcase pb-16 md:h-screen">
+  <section
+    aria-label="Main container"
+    id="main__container "
+    class="relative showcase pb-16 md:h-screen"
+  >
     <!-- BG Wallpaper Gradient -->
     <!-- <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black z-0">
   </div> -->
 
     <!-- Content Container -->
-    <div class="container relative mx-auto p-6 pt-20 lg:pt-36">
+    <div class="container relative mx-auto p-6 pt-20 lg:pt-36 overflow-hidden">
       <!-- Content -->
       <div class="flex flex-col space-y-2 z-30 relative">
         <h1
-          class="animate__animated animate__fadeIn animate__slow p-4 text-3xl font-semibold text-center text-white max-w-md md:max-w-4xl mx-auto leading-10 lg:pt-16"
+          class="animate__animated animate__fadeIn animate__slow md:p-4 text-3xl text-center text-white max-w-md md:max-w-5xl mx-auto lg:leading-10 lg:pt-16 lg:uppercase font-light"
         >
           {heading}
         </h1>
@@ -48,7 +52,7 @@ const {
       >
         <a
           href="#prev-projects"
-          class="p-4 text-sm font-semibold text-white bg-opacity-0 uppercase rounded shadow-md border-2 border-white md:text-base hover:bg-white hover:text-black transition duration-700"
+          class="p-4 text-sm font-semibold text-white bg-opacity-0 uppercase rounded shadow-md border-2 border-white md:text-base hover:bg-white hover:text-black transition duration-700 focus:outline-none focus:ring-2 focus:ring-softRed focus:ring-offset-4 focus:ring-offset-transparent"
           >previous projects</a
         >
       </div>
@@ -78,7 +82,12 @@ const {
           <div class="h-3 -top-10 w-full bg-purple-500 px-20"></div>
           <!-- Image -->
           <div class="flex justify-center">
-            <img src={dotNetLogo} alt="" class="h-28 w-28" />
+            <img
+              aria-label="Dot Net Logo"
+              src={dotNetLogo}
+              alt="Dot Net Logo"
+              class="h-28 w-28"
+            />
           </div>
         </div>
 
@@ -89,7 +98,7 @@ const {
           <div class="h-3 -top-10 w-full bg-blue-500 px-20"></div>
           <!-- Image -->
           <div class="flex justify-center self-center h-28 w-28">
-            <img src={azureLogo} alt="" />
+            <img aria-label="Azure logo" src={azureLogo} alt="Azure logo" />
           </div>
         </div>
 
@@ -101,7 +110,11 @@ const {
           <div class="h-3 w-full bg-orange-500 px-20"></div>
           <!-- Image -->
           <div class="flex justify-center self-center h-28 w-28">
-            <img src={AWSLogo} alt="" />
+            <img
+              aria-label="Amazon Web Services Logo"
+              src={AWSLogo}
+              alt="Amazon Web Services Logo"
+            />
           </div>
         </div>
 
@@ -113,7 +126,11 @@ const {
           <div class="h-3 -top-10 w-full bg-violet-400 px-20"></div>
           <!-- Image -->
           <div class="flex justify-center self-center h-28 w-28">
-            <img src={dotNetMaui} alt="" />
+            <img
+              aria-label="Dot Net Maui Logo"
+              src={dotNetMaui}
+              alt="Dot Net Maui Logo"
+            />
           </div>
         </div>
       </div>

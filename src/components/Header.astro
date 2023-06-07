@@ -2,12 +2,14 @@
 import logo from '../images/casoftware-fit.svg';
 ---
 
-<header class="header relative md:p-6 z-40 text-center">
+<header aria-label="Header" class="header relative md:p-6 z-40 text-center">
   <!-- Flex container for nav items -->
   <div class="md:flex justify-between md:mx-auto items-center max-w-[2000px]">
     <!-- Logo -->
     <div class="w-44 h-min mx-auto md:mx-0 pb-8 md:pb-0 mt-10 md:mt-0">
-      <a href="/"><img class="cursor-pointer" src={logo} alt="" /></a>
+      <a href="/"
+        ><img aria-label="Home" class="cursor-pointer" src={logo} alt="" /></a
+      >
     </div>
     <!-- <div>
         <img src="/Images/CALtd_logoV2.svg" alt="" class="w-64" />
@@ -18,6 +20,7 @@ import logo from '../images/casoftware-fit.svg';
       class="flex items-center justify-center space-x-4 md:space-x-10 uppercase text-grayishBlue"
     >
       <a
+        tabindex="0"
         href="/privacy"
         class="privacy flex tracking-widest hover:text-white transition duration-500"
         >privacy policy</a
