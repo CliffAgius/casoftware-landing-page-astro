@@ -4,6 +4,7 @@ import dotNetLogo from '../images/dotnet.png';
 import dotNetMaui from '../images/maui.svg';
 import AWSLogo from '../images/aws.svg';
 import azureLogo from '../images/azure.svg';
+import bgWallpaper from '../images/gradient-blue.jpg';
 
 export interface Props {
   heading?: string;
@@ -18,14 +19,11 @@ const {
 } = Astro.props as Props;
 ---
 
-<div
-  id="bg__wallpaper"
-  class="bg-wallpaper bg-cover bg-no-repeat bg-center relative z-10 min-h-screen"
->
+<div id="bg__wallpaper" style={`background-image: url(${bgWallpaper});`}>
   <section
     aria-label="Main container"
     id="main__container "
-    class="relative showcase pb-16 md:h-screen"
+    class="relative showcase pb-16 md:min-h-screen"
   >
     <!-- BG Wallpaper Gradient -->
     <!-- <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black z-0">
@@ -211,6 +209,14 @@ const {
     color: #fff;
     text-align: center;
     font-weight: 300;
+  }
+  #bg__wallpaper {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
   }
 </style>
 
